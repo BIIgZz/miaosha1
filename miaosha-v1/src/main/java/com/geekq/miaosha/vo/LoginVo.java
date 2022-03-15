@@ -19,7 +19,7 @@ public class LoginVo {
     private String username;
 
     @NotNull
-    @Length(min = 32)
+    @Length(min = 0)
     private String password;
 
     @Override

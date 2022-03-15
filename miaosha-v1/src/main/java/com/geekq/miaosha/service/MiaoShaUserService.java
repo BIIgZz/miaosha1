@@ -135,13 +135,13 @@ public class MiaoShaUserService {
 
         String dbPass = user.getPassword();
         String saltDb = user.getSalt();
-        String calcPass = MD5Utils.formPassToDBPass(password, saltDb);
+        String calcPass = MD5Utils.inputPassToDBPass(password, saltDb);
         //我觉得这里逻辑错误了好像是equals loginvo password//
 //        if (!calcPass.equals(dbPass)) {
 //            throw new GlobleException(PASSWORD_ERROR);
 //        }
 
-        if (!calcPass.equals(loginVo.getPassword())) {
+        if (!calcPass.equals(dbPass)){
             throw new GlobleException(PASSWORD_ERROR);
         }
 
